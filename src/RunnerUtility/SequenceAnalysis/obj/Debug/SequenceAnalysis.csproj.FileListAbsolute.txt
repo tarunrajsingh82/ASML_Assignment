@@ -1,0 +1,7 @@
+C:\Users\Prashant\Desktop\Runner\RunnerUtility\SequenceAnalysis\bin\Debug\SequenceAnalysis.pdb
+C:\Users\Prashant\Desktop\Runner\RunnerUtility\SequenceAnalysis\obj\Debug\SequenceAnalysis.csprojAssemblyReference.cache
+C:\Users\Prashant\Desktop\Runner\RunnerUtility\SequenceAnalysis\obj\Debug\SequenceAnalysis.csproj.CoreCompileInputs.cache
+C:\Users\Prashant\Desktop\Runner\RunnerUtility\SequenceAnalysis\obj\Debug\SequenceAnalysis.pdb
+C:\Users\Prashant\Desktop\Runner\RunnerUtility\SequenceAnalysis\bin\Debug\SequenceAnalysis.dll.config
+C:\Users\Prashant\Desktop\Runner\RunnerUtility\SequenceAnalysis\bin\Debug\SequenceAnalysis.dll
+C:\Users\Prashant\Desktop\Runner\RunnerUtility\SequenceAnalysis\obj\Debug\SequenceAnalysis.dll

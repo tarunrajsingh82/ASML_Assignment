@@ -1,0 +1,69 @@
+﻿<Window x:Class="Runner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Runner"
+        mc:Ignorable="d"
+        Title="Runner" Height="450" Width="800">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+    
+    <Border BorderBrush="Gray" BorderThickness="1">
+    <Grid Margin="3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Select problem to solve"  Margin="10,10,10,20"/>
+            <RadioButton x:Name="RdBtnSum" GroupName="Problems" Content="Sum of Multiples of 3 and 5" HorizontalAlignment="Left" IsChecked="True" Margin="5"/>
+                <RadioButton  x:Name="RdBtnSeq" GroupName="Problems" Content="SequenceAnalysis" HorizontalAlignment="Left" Margin="5"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal"
+                    Visibility="{Binding ElementName=RdBtnSum,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Label Content="Limit: " />
+            <TextBox x:Name="TxtBoxLimit" Text="1000"  Margin="10,0,0,0" Width="100" />   
+        </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical"
+                    Visibility="{Binding ElementName=RdBtnSeq,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Label Content=" Input Sequence: " />
+                <TextBox x:Name="InputSeqTxtBox" Text="ZaaaDaaADffGssB" TextWrapping="Wrap" Margin="10,0,0,0" Width="200" Height="100" />
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,10,30,10"
+                    Visibility="{Binding ElementName=RdBtnSum,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock Text="Select Technique"  Margin="10,10,10,20"/>
+                <RadioButton x:Name="RdBtnAlgo" GroupName="Technique" Content="Mathematical Formula" HorizontalAlignment="Left" IsChecked="True" Margin="5"/>
+                <RadioButton  x:Name="RdBtnForLoop" GroupName="Technique" Content="ForLoop" HorizontalAlignment="Left" Margin="5"/>
+                <RadioButton  x:Name="RdBtnLinq" GroupName="Technique" Content="LINQ" HorizontalAlignment="Left" Margin="5"/>
+
+        </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,10,30,10"
+                    Visibility="{Binding ElementName=RdBtnSeq,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}">
+                <TextBlock Text="Select Technique"  Margin="10,10,10,20"/>
+                <RadioButton x:Name="RdBtnHash" GroupName="TechniqueSeq" Content="Using Hashing" HorizontalAlignment="Left" IsChecked="True" Margin="5"/>
+                <RadioButton  x:Name="RdBtnMerge" GroupName="TechniqueSeq" Content="Using Merge Sort" HorizontalAlignment="Left" Margin="5"/>
+                <RadioButton  x:Name="RdBtnLINQSeq" GroupName="TechniqueSeq" Content="Using LINQ" HorizontalAlignment="Left" Margin="5"/>
+
+            </StackPanel>
+
+            <Button x:Name="exBtn" Grid.Row="0" Grid.Column="1"  Content="Exceute" Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,10,10,20"
+                  Click="exBtn_Click"/>
+
+            <Border Grid.Row="1" Grid.ColumnSpan="2" Background="Black" BorderBrush="Gray" BorderThickness="1">
+                <TextBlock x:Name="TxtOutput" Foreground="GreenYellow" Text="Output" Margin="5"/>
+        </Border>
+    </Grid>
+    </Border>
+</Window>
